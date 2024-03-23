@@ -33,7 +33,7 @@ Q: Find products which contain product color indigo and product price 492.00
 
      db.products.find({
      $and: [{ product_color: "indigo" }, { product_price: 492.0 }]
-});
+    });
 
 Q: Delete the products which product price value are same
 
