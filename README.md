@@ -37,10 +37,6 @@ Q: Find products which contain product color indigo and product price 492.00
 
 Q: Delete the products which product price value are same
 
-Ans: // First get list of product_price which are repeated. Result is [47] as per JSON File.
+Ans: // First get list of product_price which are repeated. Result is [36] as per JSON File.
 
-    db.products.aggregate([
-    { $group: { _id: "$product_price", count: { $count: {} } } },
-    { $match: { _id: { $ne: null }, count: { $gt: 1 } } }
-    ]);
-    db.products.deleteOne({ product_price: { $in: [47] } });
+    db.products.deleteMany({ product_price: 36 });
